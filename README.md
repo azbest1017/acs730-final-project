@@ -2,6 +2,17 @@
 
 This project contains Terraform code to deploy a web application on AWS using ASG and ALB.
 
+Copy your static site to an S3 bucket
+
+Create an S3 bucket for each environment for index.html and /images
+
+Upload contents of web/ to the S3 bucket via AWS Console or CLI:
+
+bash
+aws s3 mb s3://mygroup-dev-bucket
+aws s3 cp web/index.html s3://mygroup-dev-bucket/index.html
+aws s3 cp web/images/ s3://mygroup-dev-bucket/images/ --recursive
+
 ## Deployment Instructions
 
 1. Initialize Terraform:
